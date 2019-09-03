@@ -1,12 +1,18 @@
 package com.company;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+        int number = 0;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your number :");
-        int number = scanner.nextInt();
+        try{
+            number = scanner.nextInt();   
+        }catch (InputMismatchException ex){
+            System.out.println("Input is not a number!");
+        }
 
         if (number == 0){
             System.out.println("Zero");
@@ -65,5 +71,4 @@ public class Main {
         }
         return word;
     }
-
 }
