@@ -16,8 +16,10 @@ public class Main {
             System.out.println(TwentyOneToNinetyNine(number));;
         }else if (number <= 999){
             System.out.println(OneHundredToNineHundred(number));
+        }else if (number <= 20000){
+            System.out.println(OneThousandToTwentyThousand(number));
         }else if (number <= 99999){
-            System.out.println(OneThousandToNinetyThousand(number));
+            System.out.println(TwentyThousandToNinetyThousand(number));
         }
     }
 
@@ -44,12 +46,22 @@ public class Main {
         return word;
     }
 
-    public static String OneThousandToNinetyThousand(int number){
+    public static String OneThousandToTwentyThousand(int number){
         String word;
         if (number % 1000 == 0){
             word = OneToTwenty(number/1000) + " thousand";
         }else{
             word = OneToTwenty(number/1000) +  " thousand " + OneHundredToNineHundred(number%1000);
+        }
+        return word;
+    }
+
+    public static String TwentyThousandToNinetyThousand(int number){
+        String word;
+        if (number % 1000 == 0){
+            word = TwentyOneToNinetyNine(number/1000) + " thousand";
+        }else{
+            word = TwentyOneToNinetyNine(number/1000) + " thousand " + OneHundredToNineHundred(number%1000);
         }
         return word;
     }
